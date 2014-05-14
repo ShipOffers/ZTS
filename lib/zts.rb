@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 
 class ZTS
-	def self.prepend_zeroes
+	def self.prepend_zeroes(zip)
 		zip[0] += '0'*(5 - zip.length)
 	end
 	
