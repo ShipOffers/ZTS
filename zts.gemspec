@@ -6,5 +6,5 @@ Gem::Specification.new do |s|
   s.description = "A wrapper for the Zippopotam.us API"
   s.authors     = ["Yoshiki Schmitz"]
   s.email       = 'yoshiki@eyefive.com'
-  s.files       = ["lib/hola.rb"]
+  s.files       = ["lib/zts.rb"]
 end
