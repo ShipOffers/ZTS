@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'ZTS'
+  s.name        = 'zts'
   s.version     = '0.0.1'
   s.date        = '2014-05-14'
   s.summary     = "Converts zip codes to state abbreviations using zippopotam.us"
