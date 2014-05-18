@@ -15,7 +15,7 @@ class ZTS
   end
 
   def self.prepend_zeroes(zip)
-	  zip.insert 0, '0'*(5 - zip.length)
+    zip.insert 0, '0'*(5 - zip.length)
   end
   
   def self.clean_zip(zip)
