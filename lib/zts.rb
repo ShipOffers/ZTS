@@ -2,8 +2,20 @@ require 'net/http'
 require 'json'
 
 class ZTS
+ # Takes a zip as an integer or string and returns the state or nil
+  # if none could be found
+  def self.zip_to_state(zip)
+    zip = zip.to_s
+    json = get_response( clean_zip( zip ) )
+    unless json['places'].nil?
+      return json['places'][0]['state abbreviation']
+    else 
+      return nil
+    end
+  end
+
   def self.prepend_zeroes(zip)
-    zip[0] += '0'*(5 - zip.length)
+	  zip.insert 0, '0'*(5 - zip.length)
   end
   
   def self.clean_zip(zip)
@@ -20,15 +32,4 @@ class ZTS
     JSON.parse(res)
   end
 
-  # Takes a zip as an integer or string and returns the state or nil
-  # if none could be found
-  def self.zip_to_state(zip)
-    zip = zip.to_s
-    json = get_response( clean_zip( zip ) )
-    unless json['places'].nil?
-      return json['places'][0]['state abbreviation']
-    else 
-      return nil
-    end
-  end
 end
